@@ -1,0 +1,15 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    color: whitesmoke;
+}
+
+body{
+    background-color: #232323;
+    font-family: monospace;
+}
+
+li a{
+    font-size: 2em;
+}

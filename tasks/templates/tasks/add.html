@@ -1,0 +1,11 @@
+{% extends "tasks/layout.html" %} {% block body %}
+<h1>Add Task</h1>
+<form action="{% url 'tasks:add' %}" method="POST">
+  {% comment %} unique toke for every user that enter this subwebsite
+  {%endcomment %} {% csrf_token %} {% comment %}
+  <input type="text" name="task" placeholder="Type name of next task" />
+  {%endcomment %} {{ form }}
+  <input type="submit" name="btn" />
+</form>
+<a href="{% url 'tasks:index' %}">View Tasks</a>
+{% endblock %}
