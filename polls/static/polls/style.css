@@ -13,3 +13,22 @@ body{
 li a{
     font-size: 2em;
 }
+
+main{
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
+
+ul{
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+li{
+    border: 1px solid whitesmoke;
+    padding: 2rem;
+}

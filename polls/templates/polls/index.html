@@ -4,12 +4,13 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>NewYear</title>
+		<title>polls</title>
 		<link href="{% static 'polls/style.css' %}" rel="stylesheet" />
 		<!-- newyear/static/newyear/styles.css -->
 	</head>
 	<body>
 
+<main>
 {% if latest_question_list %}
     <ul>
     {% for question in latest_question_list %}
@@ -20,3 +21,4 @@
     <p>No polls are available.</p>
 {% endif %}
 </body>
+</main>
