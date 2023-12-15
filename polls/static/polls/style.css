@@ -32,3 +32,17 @@ li{
     border: 1px solid whitesmoke;
     padding: 2rem;
 }
+
+fieldset{
+    padding: 3rem;
+    font-size: 2em;
+}
+
+fieldset h1{
+    font-size: 1.5em;
+}
+
+.vote{
+    color: #232323;
+    padding: 1rem 1.7rem;
+}
