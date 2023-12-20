@@ -1,5 +1,4 @@
 {% load static %}
-<!DOCTYPE html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
@@ -11,21 +10,11 @@
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
 	</head>
-	{% include "polls/header.html" %} 
-    <main>
-        <div class="xd">
-<h1>{{ question.question_text }}</h1>
 
-<ul>
-{% for choice in question.choice_set.all|dictsortreversed:"votes" %}
-    <li><span class="neheh">{{choice.choice_text}}</span> <span> -- {{ choice.votes }} vote{{ choice.votes|pluralize }}</span></li>
-{% endfor %}
-</ul>
+    <footer>
+        <p>&copy; 2023 Vote Vortex. All rights reserved.</p>
+        <p>Question sources -> <a href="https://www.mentimeter.com/blog/awesome-presentations/85-poll-questions-for-every-occasion">:}</p>
+    </footer>
 
-<a class="hover-underline-animation" href="{% url 'polls:detail' question.id %}">Vote Again</a>
-</div>
-</main>
-
-{% include "polls/footer.html" %} 
 
 </html>
