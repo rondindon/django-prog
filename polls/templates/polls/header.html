@@ -14,6 +14,8 @@
 <header>
 
     <nav>
+        <div class="ni">
+        <div class="header">
         
         <div class="logo">
             <div class="wrapper">
@@ -50,9 +52,33 @@
                 </div>
             </div>
 
-        <a href="{% url 'polls:index' %}">VoteVortex</a>
+            <a href="{% url 'polls:index' %}">VoteVortex</a>
 
         </div>
+
+
+
+        {% if request.user.is_authenticated %}
+            <div class="login">
+            {% if user.is_authenticated %}
+                {% if user.is_staff %}
+                    <a class="purple" href="{% url 'admin:index' %}">Go to Admin Page</a>
+                {% endif %}
+            {% endif %}
+            <p>{{ request.user.username }} :)</p>
+            <a class="hover-underline-animation" href="{% url 'polls:logout' %}">Logout</a>
+            {% else %}
+            <div class="lolol">
+
+                <a class="hover-underline-animation"  href="{% url 'polls:login' %}">Login</a>
+                <a class="hover-underline-animation"  href="{% url 'polls:signup' %}">Signup</a>
+            </div>
+            </div>
+            <div>
+        {% endif %}
+
+        </div>
+    </div>        
         
     <nav>
 

@@ -1,9 +1,10 @@
 from django.http import HttpResponseRedirect
-from django.shortcuts import get_object_or_404, render
+from django.shortcuts import get_object_or_404, render, redirect
 from django.urls import reverse
 from django.views import generic
+from django.contrib.auth import authenticate, login, logout
 import datetime
-
+from .forms import UserCreationForm, LoginForm
 from .models import Choice, Question
 
 
@@ -57,3 +58,34 @@ def detail(request, question_id):
     except Question.DoesNotExist:
         raise Http404("Question does not exist")
     return render(request, "polls/detail.html", {"question": question})
+
+def user_signup(request):
+    if request.method == 'POST':
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('polls:login')
+    else:
+        form = UserCreationForm()
+    return render(request, 'polls/signup.html', {'form': form})
+
+def user_login(request):
+    if request.method == 'POST':
+        form = LoginForm(request.POST)
+        if form.is_valid():
+            username = form.cleaned_data['username']
+            password = form.cleaned_data['password']
+            user = authenticate(request, username=username, password=password)
+            if user:
+                login(request, user)    
+                return redirect('polls:index')  # Assuming you have a URL named 'home'
+    else:
+        form = LoginForm()
+    return render(request, 'polls/login.html', {'form': form})
+
+def user_logout(request):
+    logout(request)
+    return redirect('polls:login')
+
+def your_view(request):
+    return render(request, 'polls/header.html', {'user': request.user})

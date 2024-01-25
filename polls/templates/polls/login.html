@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>polls</title>
+		<link href="{% static 'polls/style.css' %}" rel="stylesheet" />
+		<!-- newyear/static/newyear/styles.css -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+	</head>
+
+    {% include "polls/header.html" %} 
+
+<main>
+
+<form method="POST" class='login-form'>
+    <h1>Login</h1>
+    {% csrf_token %}
+    {{ form.as_p }}
+    <div class="ajaj">
+        <button type="submit" class='login-btn'>Login</button>
+        <a class="hover-underline-animation" href="{% url 'polls:signup' %}">Dont have an account?</a>
+    </div>
+</form>
+
+</main>
+
+{% include "polls/footer.html" %} 

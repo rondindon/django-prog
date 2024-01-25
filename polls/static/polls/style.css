@@ -22,7 +22,7 @@ li a{
 main{
     display: flex;
     width: 100vw;
-    height: 70%;
+    height: 70vh;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
@@ -102,7 +102,7 @@ form{
     cursor: pointer;
 }
 
-p{
+.neheh p{
     margin-bottom: 1rem;
 }
 
@@ -164,7 +164,7 @@ p{
     position: absolute;
     width: 100%;
     transform: scaleX(0);
-    height: 2px;
+    height: 1.5px;
     bottom: -2px;
     left: 0;
     background-color: whitesmoke;
@@ -301,4 +301,106 @@ footer{
 .error{
     color: rgb(187, 88, 88);
     text-shadow: -1px -1px 4px rgba(187, 88, 88,.6);
+}
+
+.ni{
+    width: 58%;
+}
+
+.header{
+    align-items: center;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.header .login{
+    display: flex;
+    gap: 2.5rem;
+    align-items: center;
+}
+
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-btn{
+    padding: 1rem 2.5rem;
+    color: #232323;
+    cursor: pointer;
+}
+
+.login-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+    box-shadow: 0px 0px 25px 7px rgba(255, 255, 255, 0.322);
+    color: #232323;
+}
+
+.login-form input{
+    padding: 0.5rem;
+    color: #232323;
+}
+
+.ajaj{
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    flex-direction: row-reverse;
+    align-self: center;
+}
+
+.signup-form{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2rem;
+    color: #232323;
+    box-shadow: 0px 0px 25px 7px rgba(255, 255, 255, 0.322);
+    padding: 2rem;
+}
+
+.signup-form h1{
+    align-self: center;
+}
+
+.signup-form input{
+    color: #232323;
+    padding: .2rem;
+}
+
+.lolol{
+    display: flex;
+    gap: 2rem;
+}
+
+form{
+    background-color: #353232;
+    padding: 3rem;
+    border-radius: 10px;
+}
+
+.purple{
+    background-color: #cc7ac8;
+    color: whitesmoke;
+    padding: 1rem 1.75rem;
+    cursor: pointer;
+    box-shadow: inset 0px 0px 70px -43px rgba(35,35,35,1);
+    box-shadow: 0px 0px 10px 0px rgba(179, 129, 172, 0.5);
+    align-self: flex-end;
+    transition: .2s;
+    border-radius: 5px;
+    font-weight: normal;
+    transition: .3s;
+}
+
+.purple:hover{
+    background-color: #8f2f6a;
+    border-color: whitesmoke;
+    color: whitesmoke;
+    box-shadow: 0px 0px 10px 0px rgba(179, 129, 172, 1);
 }
