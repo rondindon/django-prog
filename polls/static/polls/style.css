@@ -327,9 +327,17 @@ nav{
 }
 
 .login-btn{
+    border-radius: 10px;
     padding: 1rem 2.5rem;
     color: #232323;
     cursor: pointer;
+    transition: .5s;
+    border: none;
+}
+
+.login-btn:hover{
+    background-color: #696666a1;
+    color: whitesmoke;
 }
 
 .login-form{
